@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Copyright (c) 2011 by Daniel Hodan <daniel.hodan@anyd.cz>.
+  ~
+  ~ This file is part of Tarsius.
+  ~
+  ~ Tarsius is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Tarsius is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Tarsius. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<add xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="add.xsd">
+
+    <description>Text editor packages</description>
+
+    <package name="vim">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.vim.org/index.html</param1>
+            <param2><![CDATA[Vim\n(.*?)\s+is the current version]]></param2>
+        </parser>
+        <tags>
+            <tag>vim</tag>
+            <tag>text editor</tag>
+            <tag>tui</tag>
+        </tags>
+    </package>
+
+    <package name="emacs">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.gnu.org/software/emacs</param1>
+            <param2><![CDATA[<b>The current stable release is (.*?)<\/b>]]></param2>
+        </parser>
+        <tags>
+            <tag>emacs</tag>
+            <tag>text editor</tag>
+            <tag>tui</tag>
+        </tags>
+    </package>
+
+    <package name="ed">
+        <parser class="cz.anyd.updater.parser.app.FtpDirectoryListParser">
+            <param1>ftp.gnu.org</param1>
+            <param2>/gnu/ed</param2>
+            <param3><![CDATA[ed-(.*?).tar.gz]]></param3>
+        </parser>
+        <tags>
+            <tag>ed</tag>
+            <tag>text editor</tag>
+            <tag>tui</tag>
+        </tags>
+    </package>
+
+    <package name="nano">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.nano-editor.org</param1>
+            <param2><![CDATA[Latest Version\s+(.*?) \(stable\)]]></param2>
+        </parser>
+        <tags>
+            <tag>nano</tag>
+            <tag>text editor</tag>
+            <tag>tui</tag>
+        </tags>
+    </package>
+
+    <package name="jedit">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.jedit.org</param1>
+            <param2><![CDATA[Stable Version: <a(?:[^>]*)>(.*?)<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>jedit</tag>
+            <tag>text editor</tag>
+            <tag>gui</tag>
+            <tag>java</tag>
+        </tags>
+    </package>
+
+    <package name="gedit">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://projects.gnome.org/gedit/index.html</param1>
+            <param2><![CDATA[The latest stable release is <a(?:[^>]*)>(.*?)<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>gedit</tag>
+            <tag>text editor</tag>
+            <tag>gui</tag>
+            <tag>gtk</tag>
+            <tag>gnome</tag>
+        </tags>
+    </package>
+
+    <package name="scite">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.scintilla.org/SciTEDownload.html</param1>
+            <param2><![CDATA[<h2(?:[^>]*)>\s+Release (.*?)\s+<\/h2>]]></param2>
+        </parser>
+        <tags>
+            <tag>scite</tag>
+            <tag>text editor</tag>
+            <tag>gui</tag>
+            <tag>gtk</tag>
+        </tags>
+    </package>
+
+    <package name="leafpad">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://tarot.freeshell.org/leafpad/index.html</param1>
+            <param2><![CDATA[<a(?:[^>]*)>leafpad-(.*?).tar.gz<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>leafpad</tag>
+            <tag>text editor</tag>
+            <tag>gui</tag>
+            <tag>gtk</tag>
+        </tags>
+    </package>
+
+</add>

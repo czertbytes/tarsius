@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Copyright (c) 2011 by Daniel Hodan <daniel.hodan@anyd.cz>.
+  ~
+  ~ This file is part of Tarsius.
+  ~
+  ~ Tarsius is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Tarsius is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Tarsius. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<add xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="add.xsd">
+
+    <description>Web browser packages</description>
+
+    <package name="firefox">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://releases.mozilla.org/pub/mozilla.org/firefox/releases/latest/linux-i686/en-US/</param1>
+            <param2><![CDATA[<a(?:[^>]*)>firefox-(.*?).tar.bz2<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>firefox</tag>
+            <tag>web browser</tag>
+            <tag>gui</tag>
+            <tag>gtk</tag>
+        </tags>
+    </package>
+
+    <package name="chromium">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://omahaproxy.appspot.com/</param1>
+            <param2><![CDATA[linux,stable,([^,]*),(?:.*?)]]></param2>
+        </parser>
+        <tags>
+            <tag>chromium</tag>
+            <tag>web browser</tag>
+            <tag>gui</tag>
+            <tag>gtk</tag>
+        </tags>
+    </package>
+
+    <package name="midori">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://git.xfce.org/apps/midori/plain/ChangeLog</param1>
+            <param2><![CDATA[v([^:]*):]]></param2>
+        </parser>
+        <tags>
+            <tag>midori</tag>
+            <tag>web browser</tag>
+            <tag>gui</tag>
+            <tag>gtk</tag>
+        </tags>
+    </package>
+
+</add>

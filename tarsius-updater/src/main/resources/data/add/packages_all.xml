@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Copyright (c) 2011 by Daniel Hodan <daniel.hodan@anyd.cz>.
+  ~
+  ~ This file is part of Tarsius.
+  ~
+  ~ Tarsius is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Tarsius is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Tarsius. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<add xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="add.xsd">
+
+    <description>All packages></description>
+
+
+
+    <package name="httpd">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://httpd.apache.org/download.cgi</param1>
+            <param2><![CDATA[<a(?:[^>]*)>httpd-(.*?).tar.gz<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>httpd</tag>
+            <tag>web server</tag>
+        </tags>
+    </package>
+
+    <package name="lighttpd">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.lighttpd.net/download/</param1>
+            <param2><![CDATA[lighttpd-(.*?).tar.gz]]></param2>
+        </parser>
+        <tags>
+            <tag>lighttpd</tag>
+            <tag>web server</tag>
+        </tags>
+    </package>
+
+    <package name="yaws">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://yaws.hyber.org/</param1>
+            <param2><![CDATA[Yaws (.*?)\s+<\/h3>]]></param2>
+        </parser>
+        <tags>
+            <tag>yaws</tag>
+            <tag>web server</tag>
+        </tags>
+    </package>
+
+    <package name="cherokee">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.cherokee-project.com/download/</param1>
+            <param2><![CDATA[<a(?:[^>]*)>LATEST_is_(.*?)<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>cherokee</tag>
+            <tag>web server</tag>
+        </tags>
+    </package>
+
+    <package name="nginx">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://nginx.org/en/download.html</param1>
+            <param2><![CDATA[nginx-(.*?).tar.gz]]></param2>
+        </parser>
+        <tags>
+            <tag>nginx</tag>
+            <tag>web server</tag>
+        </tags>
+    </package>
+
+
+
+    <package name="postgresql">
+        <parser class="cz.anyd.updater.parser.app.ClosureParser">
+            <param1>http://www.postgresql.org/versions.rss</param1>
+            <param2><![CDATA[new XmlSlurper().parseText(it).channel.item[0].title]]></param2>
+        </parser>
+        <tags>
+            <tag>postgresql</tag>
+            <tag>database</tag>
+            <tag>relational</tag>
+        </tags>
+    </package>
+
+    <package name="mysql">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.mysql.com/downloads</param1>
+            <param2><![CDATA[MySQL Community Server<\/a><span(?:[^>]*)>\(Current Generally Available Release: (.*?)\)<\/span>]]></param2>
+        </parser>
+        <tags>
+            <tag>mysql</tag>
+            <tag>database</tag>
+            <tag>relational</tag>
+        </tags>
+    </package>
+
+    <package name="sqlite">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.sqlite.org</param1>
+            <param2><![CDATA[Version (.*?)<\/a>\s+of SQLite is recommended for all new development.]]></param2>
+        </parser>
+        <tags>
+            <tag>sqlite</tag>
+            <tag>database</tag>
+            <tag>relational</tag>
+        </tags>
+    </package>
+
+    <package name="mongodb">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.mongodb.org/downloads</param1>
+            <param2><![CDATA[<div class="version">\s+(.*)\s+<\/div>]]></param2>
+        </parser>
+        <tags>
+            <tag>mongodb</tag>
+            <tag>database</tag>
+            <tag>nosql</tag>
+        </tags>
+    </package>
+
+    <package name="redis">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.redis.io</param1>
+            <param2><![CDATA[<a(?:[^>]*)>Redis (.*?) is the latest stable version.<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>redis</tag>
+            <tag>database</tag>
+            <tag>nosql</tag>
+        </tags>
+    </package>
+
+    <package name="couchdb">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://couchdb.apache.org/downloads.html</param1>
+            <param2><![CDATA[<h3>(.*)<\/h3>]]></param2>
+        </parser>
+        <tags>
+            <tag>couchdb</tag>
+            <tag>database</tag>
+            <tag>nosql</tag>
+        </tags>
+    </package>
+
+    <package name="firebird">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.ibphoenix.com/download</param1>
+            <param2><![CDATA[<a href=\"\/download\/firebird\/25\"> (.*?)<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>firebird</tag>
+            <tag>database</tag>
+            <tag>relational</tag>
+        </tags>
+    </package>
+
+
+
+
+    <package name="evolution">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://projects.gnome.org/evolution/download.shtml</param1>
+            <param2><![CDATA[Evolution<\/a><\/td>\s+<td>(.*?)<\/td>]]></param2>
+        </parser>
+        <tags>
+            <tag>evolution</tag>
+            <tag>mail</tag>
+            <tag>email client</tag>
+        </tags>
+    </package>
+
+    <package name="mutt">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.mutt.org/</param1>
+            <param2><![CDATA[<h3>Stable<\/h3>\s+<p>\s+Mutt (.*?) was released]]></param2>
+        </parser>
+        <tags>
+            <tag>mutt</tag>
+            <tag>mail</tag>
+            <tag>email client</tag>
+        </tags>
+    </package>
+
+    <package name="pine">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.washington.edu/pine/getpine/linux.html</param1>
+            <param2><![CDATA[pine_(.*?)_i386.deb]]></param2>
+        </parser>
+        <tags>
+            <tag>pine</tag>
+            <tag>mail</tag>
+            <tag>email client</tag>
+        </tags>
+    </package>
+
+    <package name="alpine">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.washington.edu/alpine/acquire/</param1>
+            <param2><![CDATA[alpine_(.*?)_i386.deb]]></param2>
+        </parser>
+        <tags>
+            <tag>alpine</tag>
+            <tag>mail</tag>
+            <tag>email client</tag>
+        </tags>
+    </package>
+
+    <package name="claws">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.claws-mail.org/news.php</param1>
+            <param2><![CDATA[Claws Mail (.*?)<b]]></param2>
+        </parser>
+        <tags>
+            <tag>claws</tag>
+            <tag>mail</tag>
+            <tag>email client</tag>
+        </tags>
+    </package>
+
+    <package name="sylpheed">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://sylpheed.sraoss.jp/en/</param1>
+            <param2><![CDATA[<span(?:[^>]*)>Version (.*?)<\/span>]]></param2>
+        </parser>
+        <tags>
+            <tag>sylpheed</tag>
+            <tag>mail</tag>
+            <tag>email client</tag>
+        </tags>
+    </package>
+
+    <package name="thunderbird">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/latest/linux-i686/en-US/</param1>
+            <param2><![CDATA[<a(?:[^>]*)>thunderbird-(.*?).tar.bz2<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>thunderbird</tag>
+            <tag>mail</tag>
+            <tag>email client</tag>
+        </tags>
+    </package>
+
+    <package name="dovecot">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.dovecot.org/</param1>
+            <param2><![CDATA[Released <a(?:[^>]*?)>\s+v(.*?)</a>]]></param2>
+        </parser>
+        <tags>
+            <tag>dovecot</tag>
+            <tag>mail</tag>
+            <tag>mta</tag>
+        </tags>
+    </package>
+
+    <package name="exim">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.exim.org/</param1>
+            <param2><![CDATA[<h2>Latest Version: (.*?)<\/h2>]]></param2>
+        </parser>
+        <tags>
+            <tag>exim</tag>
+            <tag>mail</tag>
+            <tag>mta</tag>
+        </tags>
+    </package>
+
+    <package name="fetchmail">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://fetchmail.berlios.de/index.html</param1>
+            <param2><![CDATA[<h1>NEWS: FETCHMAIL (.*?) RELEASE<\/h1>]]></param2>
+        </parser>
+        <tags>
+            <tag>fetchmail</tag>
+            <tag>mail</tag>
+            <tag>email client</tag>
+        </tags>
+    </package>
+
+    <package name="postfix">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://ftp.porcupine.org/mirrors/postfix-release/index.html</param1>
+            <param2><![CDATA[<a href=\"official\/postfix-(.*?).tar.gz\">Source code<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>postfix</tag>
+            <tag>mail</tag>
+            <tag>mta</tag>
+        </tags>
+    </package>
+
+    <package name="courier">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.courier-mta.org/download.php</param1>
+            <param2><![CDATA[courier-(.*?).tar.bz2]]></param2>
+        </parser>
+        <tags>
+            <tag>courier</tag>
+            <tag>mail</tag>
+            <tag>mta</tag>
+        </tags>
+    </package>
+
+    <package name="cyrus">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.cyrusimap.org/</param1>
+            <param2><![CDATA[<p>Version: (.*?)<\/p>]]></param2>
+        </parser>
+        <tags>
+            <tag>cyrus</tag>
+            <tag>mail</tag>
+            <tag>mta</tag>
+        </tags>
+    </package>
+
+    <package name="bogofilter">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://bogofilter.sourceforge.net/</param1>
+            <param2><![CDATA[<font(?:[^>]*?)>&nbsp;v(.*?)\s+<\/font>]]></param2>
+        </parser>
+        <tags>
+            <tag>bogofilter</tag>
+            <tag>mail</tag>
+            <tag>spam filter</tag>
+        </tags>
+    </package>
+
+    <package name="spamassassin">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://spamassassin.apache.org/downloads.cgi</param1>
+            <param2><![CDATA[<h3>Released version, (.*?)<\/h3>]]></param2>
+        </parser>
+        <tags>
+            <tag>spamassassin</tag>
+            <tag>mail</tag>
+            <tag>spam filter</tag>
+        </tags>
+    </package>
+
+    <package name="kolab">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.kolab.org/download.html</param1>
+            <param2><![CDATA[current stable release (.*?)\s+]]></param2>
+        </parser>
+        <tags>
+            <tag>kolab</tag>
+            <tag>groupware</tag>
+        </tags>
+    </package>
+
+    <package name="citadel">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.citadel.org/doku.php?id=news:start</param1>
+            <param2><![CDATA[<a(?:[^>]*)>Citadel (.*?) released<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>citadel</tag>
+            <tag>mail</tag>
+            <tag>groupware</tag>
+        </tags>
+    </package>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <package name="xorg">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.x.org/wiki/News</param1>
+            <param2><![CDATA[>X11R(.*?) released<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>xorg</tag>
+            <tag>x11</tag>
+        </tags>
+    </package>
+
+    <package name="openbox">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://openbox.org/wiki/Openbox:News</param1>
+            <param2><![CDATA[Openbox (.*?) released<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>openbox</tag>
+            <tag>x11</tag>
+            <tag>window manager</tag>
+        </tags>
+    </package>
+
+    <package name="fluxbox">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.fluxbox.org/download</param1>
+            <param2><![CDATA[current version of Fluxbox is <b>(.*?)<\/b>.]]></param2>
+        </parser>
+        <tags>
+            <tag>fluxbox</tag>
+            <tag>x11</tag>
+            <tag>window manager</tag>
+        </tags>
+    </package>
+
+    <package name="compiz">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.compiz.org/</param1>
+            <param2><![CDATA[The latest release of Compiz is <a(?:[^>]*)>(.*?)<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>compiz</tag>
+            <tag>x11</tag>
+            <tag>window manager</tag>
+        </tags>
+    </package>
+
+    <package name="slim">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://slim.berlios.de</param1>
+            <param2><![CDATA[Latest release: <a(?:[^>]*)>(.*?)<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>slim</tag>
+            <tag>x11</tag>
+            <tag>login manager</tag>
+        </tags>
+    </package>
+
+    <package name="gtk+">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://ftp.acc.umu.se/pub/gnome/sources/gtk+/3.0/</param1>
+            <param2><![CDATA[<a(?:[^>]*)>LATEST-IS-(.*?)<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>gtk</tag>
+            <tag>widget framework</tag>
+        </tags>
+    </package>
+
+    <package name="qt">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://qt.nokia.com/downloads</param1>
+            <param2><![CDATA[<a(?:[^>]*)>Qt libraries (.*?) for Linux]]></param2>
+        </parser>
+        <tags>
+            <tag>qt</tag>
+            <tag>widget framework</tag>
+        </tags>
+    </package>
+
+
+
+
+ </add>

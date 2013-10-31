@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Copyright (c) 2011 by Daniel Hodan <daniel.hodan@anyd.cz>.
+  ~
+  ~ This file is part of Tarsius.
+  ~
+  ~ Tarsius is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Tarsius is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Tarsius. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<add xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="add.xsd">
+
+    <description>Desktop environment packages</description>
+
+    <package name="gnome">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.gnome.org/start/stable</param1>
+            <param2><![CDATA[<title>GNOME (.*?) Release Notes<\/title>]]></param2>
+        </parser>
+        <tags>
+            <tag>gnome</tag>
+            <tag>desktop environment</tag>
+            <tag>gui</tag>
+            <tag>gtk</tag>
+        </tags>
+    </package>
+
+    <package name="kde">
+        <parser class="cz.anyd.updater.parser.app.FtpDirectoryListParser">
+            <param1>ftp.kde.org</param1>
+            <param2>pub/kde/stable/latest/src</param2>
+            <param3><![CDATA[kdebase-([^-]*?).tar.bz2]]></param3>
+        </parser>
+        <tags>
+            <tag>kde</tag>
+            <tag>desktop environment</tag>
+            <tag>gui</tag>
+            <tag>qt</tag>
+        </tags>
+    </package>
+
+    <package name="xfce">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.xfce.org/download</param1>
+            <param2><![CDATA[<h2 id=\"stable\">Stable release (.*?)<\/h2>]]></param2>
+        </parser>
+        <tags>
+            <tag>xfce</tag>
+            <tag>desktop environment</tag>
+            <tag>gui</tag>
+            <tag>gtk</tag>
+        </tags>
+    </package>
+
+    <package name="lxde">
+        <parser class="cz.anyd.updater.parser.app.ClosureParser">
+            <param1>http://lxde.org/download</param1>
+            <param2><![CDATA["0.5.0"]]></param2>
+        </parser>
+        <tags>
+            <tag>lxde</tag>
+            <tag>desktop environment</tag>
+            <tag>gui</tag>
+            <tag>gtk</tag>
+        </tags>
+    </package>
+
+</add>

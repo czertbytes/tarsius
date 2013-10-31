@@ -1,0 +1,37 @@
+hal
+cron
+syslog
+gdm/kdm/lightdm
+
+mplayer
+vlc
+gstreamer
+amarok
+quod liber
+mpd
+pulseaudio
+networkmanager
+
+abiword http://www.abisource.com/
+
+MAIL
+--------------------------------------------------
+kmail
+
+SYSTEM
+--------------------------------------------------
+cron
+hal     http://hal.freedesktop.org/releases/
+cron
+anacron
+apmd
+obex
+parted  http://ftp.gnu.org/gnu/parted/
+rsyslog http://www.rsyslog.com/changelog/
+runit   http://smarden.org/runit/install.html
+selinux
+upstart http://upstart.ubuntu.com/
+yum     http://yum.baseurl.org/
+xenutils
+
+

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Copyright (c) 2011 by Daniel Hodan <daniel.hodan@anyd.cz>.
+  ~
+  ~ This file is part of Tarsius.
+  ~
+  ~ Tarsius is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Tarsius is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Tarsius. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<add xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="add.xsd">
+
+    <description>Web Server packages</description>
+
+    <package name="httpd">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://httpd.apache.org/download.cgi</param1>
+            <param2><![CDATA[<a(?:[^>]*)>httpd-(.*?).tar.gz<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>httpd</tag>
+            <tag>web server</tag>
+        </tags>
+    </package>
+
+    <package name="lighttpd">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.lighttpd.net/download/</param1>
+            <param2><![CDATA[lighttpd-(.*?).tar.gz]]></param2>
+        </parser>
+        <tags>
+            <tag>lighttpd</tag>
+            <tag>web server</tag>
+        </tags>
+    </package>
+
+    <package name="yaws">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://yaws.hyber.org/</param1>
+            <param2><![CDATA[Yaws (.*?)\s+<\/h3>]]></param2>
+        </parser>
+        <tags>
+            <tag>yaws</tag>
+            <tag>web server</tag>
+        </tags>
+    </package>
+
+    <package name="cherokee">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.cherokee-project.com/download/</param1>
+            <param2><![CDATA[<a(?:[^>]*)>LATEST_is_(.*?)<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>cherokee</tag>
+            <tag>web server</tag>
+        </tags>
+    </package>
+
+    <package name="nginx">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://nginx.org/en/download.html</param1>
+            <param2><![CDATA[nginx-(.*?).tar.gz]]></param2>
+        </parser>
+        <tags>
+            <tag>nginx</tag>
+            <tag>web server</tag>
+        </tags>
+    </package>
+
+</add>

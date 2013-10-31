@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Copyright (c) 2011 by Daniel Hodan <daniel.hodan@anyd.cz>.
+  ~
+  ~ This file is part of Tarsius.
+  ~
+  ~ Tarsius is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Tarsius is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Tarsius. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<add xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="add.xsd">
+
+    <description>Shell packages</description>
+
+    <package name="bash">
+        <parser class="cz.anyd.updater.parser.app.FtpDirectoryListParser">
+            <param1>ftp.gnu.org</param1>
+            <param2>gnu/bash/</param2>
+            <param3><![CDATA[bash-([^doc]*?).tar.gz]]></param3>
+        </parser>
+        <tags>
+            <tag>bash</tag>
+            <tag>shell</tag>
+        </tags>
+    </package>
+
+    <package name="dash">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://gondor.apana.org.au/~herbert/dash/files/</param1>
+            <param2><![CDATA[<a(?:[^>]*)>dash-(.*?).tar.gz<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>dash</tag>
+            <tag>shell</tag>
+        </tags>
+    </package>
+
+    <package name="tcsh">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.tcsh.org/MostRecentRelease</param1>
+            <param2><![CDATA[The most recent Tcsh release is <strong>(.*?)<\/strong>.]]></param2>
+        </parser>
+        <tags>
+            <tag>tcsh</tag>
+            <tag>shell</tag>
+        </tags>
+    </package>
+
+    <package name="zsh">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://zsh.sourceforge.net/FAQ/zshfaq01.html</param1>
+            <param2><![CDATA[Zsh (.*?) is the latest production version.]]></param2>
+        </parser>
+        <tags>
+            <tag>zsh</tag>
+            <tag>shell</tag>
+        </tags>
+    </package>
+
+</add>

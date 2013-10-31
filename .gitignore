@@ -1,0 +1,8 @@
+.idea
+*.iml
+
+target/
+tarsius-common/target/
+tarsius-updater/target/
+
+tarsius-updater/src/main/groovy/cz/anyd/updater/*_packages.xml

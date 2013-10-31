@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Copyright (c) 2011 by Daniel Hodan <daniel.hodan@anyd.cz>.
+  ~
+  ~ This file is part of Tarsius.
+  ~
+  ~ Tarsius is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Tarsius is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Tarsius. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<add xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="add.xsd">
+
+    <description>X11 packages</description>
+
+    <package name="xorg">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.x.org/wiki/News</param1>
+            <param2><![CDATA[>X11R(.*?) released<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>xorg</tag>
+            <tag>x11</tag>
+        </tags>
+    </package>
+
+    <package name="openbox">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://openbox.org/wiki/Openbox:News</param1>
+            <param2><![CDATA[Openbox (.*?) released<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>openbox</tag>
+            <tag>x11</tag>
+            <tag>window manager</tag>
+        </tags>
+    </package>
+
+    <package name="fluxbox">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.fluxbox.org/download</param1>
+            <param2><![CDATA[current version of Fluxbox is <b>(.*?)<\/b>.]]></param2>
+        </parser>
+        <tags>
+            <tag>fluxbox</tag>
+            <tag>x11</tag>
+            <tag>window manager</tag>
+        </tags>
+    </package>
+
+    <package name="compiz">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.compiz.org/</param1>
+            <param2><![CDATA[The latest release of Compiz is <a(?:[^>]*)>(.*?)<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>compiz</tag>
+            <tag>x11</tag>
+            <tag>window manager</tag>
+        </tags>
+    </package>
+
+    <package name="slim">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://slim.berlios.de</param1>
+            <param2><![CDATA[Latest release: <a(?:[^>]*)>(.*?)<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>slim</tag>
+            <tag>x11</tag>
+            <tag>login manager</tag>
+        </tags>
+    </package>
+
+    <package name="gtk+">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://ftp.acc.umu.se/pub/gnome/sources/gtk+/3.0/</param1>
+            <param2><![CDATA[<a(?:[^>]*)>LATEST-IS-(.*?)<\/a>]]></param2>
+        </parser>
+        <tags>
+            <tag>gtk</tag>
+            <tag>widget framework</tag>
+        </tags>
+    </package>
+
+    <package name="qt">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://qt.nokia.com/downloads</param1>
+            <param2><![CDATA[<a(?:[^>]*)>Qt libraries (.*?) for Linux]]></param2>
+        </parser>
+        <tags>
+            <tag>qt</tag>
+            <tag>widget framework</tag>
+        </tags>
+    </package>
+
+</add>

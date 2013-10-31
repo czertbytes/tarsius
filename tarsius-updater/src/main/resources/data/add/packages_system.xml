@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ Copyright (c) 2011 by Daniel Hodan <daniel.hodan@anyd.cz>.
+  ~
+  ~ This file is part of Tarsius.
+  ~
+  ~ Tarsius is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ Tarsius is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with Tarsius. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<add xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="add.xsd">
+
+    <description>System packages</description>
+
+    <package name="linux-kernel">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.kernel.org/kdist/finger_banner</param1>
+            <param2><![CDATA[The latest stable (?:.*) version of the Linux kernel is:\s+(.*?)]]></param2>
+        </parser>
+        <tags>
+            <tag>linux</tag>
+            <tag>kernel</tag>
+            <tag>system</tag>
+        </tags>
+    </package>
+
+    <package name="grub2">
+        <parser class="cz.anyd.updater.parser.app.FtpDirectoryListParser">
+            <param1>alpha.gnu.org</param1>
+            <param2>gnu/grub</param2>
+            <param3><![CDATA[grub-([^-]*?).tar.gz]]></param3>
+        </parser>
+        <tags>
+            <tag>grub</tag>
+            <tag>system</tag>
+        </tags>
+    </package>
+
+    <package name="udev">
+        <parser class="cz.anyd.updater.parser.app.FtpDirectoryListParser">
+            <param1>kernel.org</param1>
+            <param2>pub/linux/utils/kernel/hotplug</param2>
+            <param3><![CDATA[udev-([^-]*?).tar.gz]]></param3>
+        </parser>
+        <tags>
+            <tag>udev</tag>
+            <tag>system</tag>
+        </tags>
+    </package>
+
+    <package name="dbus">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.freedesktop.org/wiki/Software/dbus</param1>
+            <param2><![CDATA[latest stable release is <a class="http" href="http://dbus.freedesktop.org/releases/dbus/dbus-(?:.*?).tar.gz">D-Bus (.*?)</a>]]></param2>
+        </parser>
+        <tags>
+            <tag>dbus</tag>
+            <tag>system</tag>
+        </tags>
+    </package>
+
+    <package name="pam">
+        <parser class="cz.anyd.updater.parser.app.FtpDirectoryListParser">
+            <param1>ftp.kernel.org</param1>
+            <param2>pub/linux/libs/pam/library</param2>
+            <param3><![CDATA[_LATEST_IS_Linux-PAM-(.*?)]]></param3>
+        </parser>
+        <tags>
+            <tag>pam</tag>
+            <tag>system</tag>
+        </tags>
+    </package>
+
+    <package name="oss">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.opensound.com/linux.html</param1>
+            <param2><![CDATA[OSS (.*?) for Linux ]]></param2>
+        </parser>
+        <tags>
+            <tag>oss</tag>
+            <tag>system</tag>
+            <tag>sound system</tag>
+        </tags>
+    </package>
+
+    <package name="alsa">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.alsa-project.org/main/index.php/Main_Page</param1>
+            <param2><![CDATA[alsa (.*?) release | ]]></param2>
+        </parser>
+        <tags>
+            <tag>alsa</tag>
+            <tag>system</tag>
+            <tag>sound system</tag>
+        </tags>
+    </package>
+
+    <package name="dkms">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://linux.dell.com/dkms/</param1>
+            <param2><![CDATA[The latest stable version is: (.*?)<br>]]></param2>
+        </parser>
+        <tags>
+            <tag>dkms</tag>
+            <tag>system</tag>
+        </tags>
+    </package>
+
+    <package name="bluez">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.bluez.org/</param1>
+            <param2><![CDATA[bluez-(.*?).tar.gz</a>]]></param2>
+        </parser>
+        <tags>
+            <tag>bluez</tag>
+            <tag>system</tag>
+        </tags>
+    </package>
+
+    <package name="nss">
+        <parser class="cz.anyd.updater.parser.app.HtmlPageParser">
+            <param1>http://www.mozilla.org/projects/security/pki/nss/</param1>
+            <param2><![CDATA[NSS (.*?) Release</a>]]></param2>
+        </parser>
+        <tags>
+            <tag>nss</tag>
+            <tag>system</tag>
+        </tags>
+    </package>
+
+</add>
